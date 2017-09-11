@@ -1,0 +1,43 @@
+Question1:
+I started with ruling out the possibility of t being longer than s. If this is the case, there is no way for the s to contain all letters of t.  Next I loop through all the characters in t and find them in s.  If I find a the letter in s, I replace it with "" in s to avoid for the same letter to be found twice.
+If we successfully come out of the loop, then t is an anagram.
+
+The runtime of this algorithm is at best O(1) where t is longer then s and at worst O(n) where n is the number of letters in t.  
+################################################################
+
+Question2:
+For this problem  I chose to utilize dynamic programming based solution to return the length of the longest palindromic subsequence.  Recomputations were avoided by constructing a temporary array L[][].  You will end up with the length of the longest palindrome in row 0 and column (n-1).
+
+Time Complexity of the above implementation is O(n^2) and space complexity is also O(n^2)
+
+################################################################
+Question3:
+The solution is loosely based on Kruskal's algorithm.  Before applying main logic, edge lists are extracted from the graph and at the end again the result is presented in the form of  graph.
+ Time efficiency for this problem is O(n*m) where n and m are edges and nodes. The space efficiency for this program would be O(n) 
+
+###############################################################
+Question 4
+If n1 and n2 are on opposite sides of the root, then the root is the least common ancestor (lca).
+If they are on the same side, I pick the one with the largest value difference from the root (let's call it n2, with no loss of generality). Then I go up one node at a time until the current value crosses the value of n1. When it happens, the previous node is the lca.
+
+Efficiency (worst case):
+- time: O(n), where n is the number of nodes. - Considering the case where I need to visit every node of the tree.
+- space: O(1) - No auxiliary structures.
+
+
+###############################################################
+Question 5:
+This linked list traversal algorithm utilizes two pointers(mid and end) to systematically advance through a linked list, such that mid pointers will always
+come to rest at the mth node from the end.
+
+The algorithm starts by advancing a ll end tracker to node
+m-1 in the list. At this point, the distance between the end
+pointer and the mid pointer--which still resides at the root
+node-- is equivilant to the distance between the mth node
+and the end of the list, plus one. Both pointers then advance
+through the list until the end pointer crosses the last node. At that point mid pointer will be pointing to the mth point from the end.
+This algorithm achieves time complexity of O(n), because it will
+always have to iterate through every element of the linked list
+in order to find the end. Notably, it achieves space complexity
+in constant time O(1) because only two variables are declared
+regardless of the size of the linked list.
